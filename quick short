@@ -1,0 +1,20 @@
+#quick short
+def quick_short(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = []
+    middle = []
+    right = []
+    for x in arr:
+        if x < pivot:
+            left.append(x)
+        elif x > pivot:
+            right.append(x)
+        else:
+            middle.append(x)
+    return quick_short(left) + middle + quick_short(right)
+
+data = [10, 7, 8, 9]
+hasil = quick_short(data)
+print("Hasil sorting:", hasil)
